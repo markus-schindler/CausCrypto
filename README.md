@@ -65,22 +65,23 @@ Sample Propensity Scores:
 * *ADF* | For each coin, prints the ADF test statistics to gauge stationarity.
 * *Visualizations* | Sub-stacked daily closing trend of all nine coins, Heat map of Pearson correlations, and a hand-craft causal graph (BTC → SOL, BTC → TRX, ...)
 
-![plot]Trends.png
+![plot](Trends.png)
 
-![plot]CorrMatrix.png
+![plot](CorrMatrix.png)
 
-![plot]ACG.png
+![plot](ACG.png)
 
 * *Bayesian Network* | Uses `pomegranate` to specify acyclic graph of seven coins with conditional probability tables derived from the Pearson correlations.
 
-![plot]ACG_final.png
+![plot](ACG_final.png)
 
 * *Momentum strategy* | Generate a binary "treatment" if Solana's trend matches Bitcoin's trend over a 30-day SMA.
 * *Propensity Score* | *Logistic Regression* on standardized features to compute `Propensity Score`.
 * *Nearest-Neighbor* matching | Matches each treated point with the nearest control within a caliper of 0.05.
 * *ATE Calculation* | Substract matched pair Return & Trend to quantify effect sizes. 
 Histogram of the return and trend balance of the matched dataset
-![plot]Histogram.png
+
+![plot](Histogram.png)
 
 > **Why a Bayesian network for altcoins?**  
 > The network encodes assumed causal drivers (BTC→TRX, BTC→BNB, etc.). After training, it outputs the probability that a “down” move in BTC leads to a “down” in each alt‑coin. 
