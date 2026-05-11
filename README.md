@@ -71,7 +71,7 @@ Sample Propensity Scores:
 
 ![plot](ACG.png)
 
-* *Bayesian Network* | Uses `pomegranate` to specify direct acyclic graph of seven coins with conditional probability tables derived from the Pearson correlations.
+* *Bayesian Network* | Uses `pomegranate` to specify directed acyclic graph of seven coins with conditional probability tables derived from the Pearson correlations.
 
 ![plot](ACG_final.png)
 

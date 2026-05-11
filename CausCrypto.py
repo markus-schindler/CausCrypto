@@ -168,11 +168,11 @@ for idx in top_indices:
     row, col = divmod(idx, len(coin_cap))
     print(f"{coin_cap[row]} -> {coin_cap[col]} {flat_corr[idx]}")
 
-#############################
-# Acyclic Graph Preparation #
-#############################
+######################################
+# Directed Acyclic Graph Preparation #
+######################################
 
-# Based on the made observations edges in a acyclic graph
+# Based on the made observations edges in a directed acyclic graph
 # could be defined. Correlations larger than 0.8 were
 # selected for a preliminary causel inference model
 crypto_graph = nx.DiGraph([('BTC', 'TRX'),
@@ -182,7 +182,7 @@ crypto_graph = nx.DiGraph([('BTC', 'TRX'),
                            ('ETH', 'SOL'),
                         ])
 
-# Plotting the acyclic graph
+# Plotting the DAG
 plt.figure(figsize=(8, 6))
 pos = nx.shell_layout(crypto_graph)
 nx.draw(crypto_graph, pos, 
@@ -258,7 +258,7 @@ d_SOL = ConditionalCategorical([[[
 d_XRP = ConditionalCategorical([[[0.5, 0.5], [0.5, 0.5]]])
 
 # Creation of Bayesian Network with list of distributions and edges
-# Edges are selected from the preliminary model; see acyclic graph
+# Edges are selected from the preliminary model; see directed acyclic graph
 crypto_bn = BayesianNetwork([d_BTC, d_ETH, d_BNB, d_TRX, d_SOL, d_XRP],
                             [(d_BTC, d_BNB), (d_BTC, d_TRX), (d_BTC, d_SOL),
                              (d_ETH, d_SOL), (d_TRX, d_XRP)]) 
@@ -280,7 +280,7 @@ p_TRX = probability(crypto_bn.distributions[3].probs[0][1][1])
 p_SOL = probability(crypto_bn.distributions[4].probs[0][1][1][1])
 p_XRP = probability(crypto_bn.distributions[5].probs[0][1][1])
 
-# Creating the labeling for the updated acyclic graph
+# Creating the labeling for the updated DAG
 node_0 = 'BTC\n100 %'
 node_1 = 'ETH\n' + p_ETH
 node_2 = 'BNB\n' + p_BNB
@@ -288,9 +288,9 @@ node_3 = 'TRX\n' + p_TRX
 node_4 = 'SOL\n' + p_SOL
 node_5 = 'XRP\n' + p_XRP
 
-#######################
-# Final Acyclic Graph #
-#######################
+################################
+# Final Directed Acyclic Graph #
+################################
 
 crypto_graph = nx.DiGraph([(node_0, node_3),
                            (node_0, node_2),
