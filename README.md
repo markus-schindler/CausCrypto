@@ -45,15 +45,70 @@ python CausCrypto.py
 The script prints a quick report to the console:
 
 ```
-Latest Unix time entry = 1597104000000
-Correlation Matrix of Cryptocoins
-Estimated ATE for Return: -4.3162 (+/- 20.9837)
-Estimated ATE for Trend: 0.5410 (+/- 4.5521)
-Sample Propensity Scores:
-   Treatment  Propensity Score
-0          1            0.689294
-1          1            0.545454
-...
+2026-06-15 20:48:11 | INFO     | __main__ | Latest Unix time entry = 1597104000000
+2026-06-15 20:48:11 | INFO     | __main__ | Loading data from data/Binance_ADAUSDT_d.csv
+2026-06-15 20:48:11 | INFO     | __main__ | Normalizing price data
+2026-06-15 20:48:11 | INFO     | __main__ | Prepared normalized data for ADA
+2026-06-15 20:48:11 | INFO     | __main__ | Loading data from data/Binance_BCHUSDT_d.csv
+2026-06-15 20:48:11 | INFO     | __main__ | Normalizing price data
+2026-06-15 20:48:11 | INFO     | __main__ | Prepared normalized data for BCH
+2026-06-15 20:48:11 | INFO     | __main__ | Loading data from data/Binance_BNBUSDT_d.csv
+2026-06-15 20:48:11 | INFO     | __main__ | Normalizing price data
+2026-06-15 20:48:11 | INFO     | __main__ | Prepared normalized data for BNB
+2026-06-15 20:48:11 | INFO     | __main__ | Loading data from data/Binance_BTCUSDT_d.csv
+2026-06-15 20:48:11 | INFO     | __main__ | Normalizing price data
+2026-06-15 20:48:11 | INFO     | __main__ | Prepared normalized data for BTC
+2026-06-15 20:48:11 | INFO     | __main__ | Loading data from data/Binance_DOGEUSDT_d.csv
+2026-06-15 20:48:11 | INFO     | __main__ | Normalizing price data
+2026-06-15 20:48:11 | INFO     | __main__ | Prepared normalized data for DOGE
+2026-06-15 20:48:11 | INFO     | __main__ | Loading data from data/Binance_ETHUSDT_d.csv
+2026-06-15 20:48:11 | INFO     | __main__ | Normalizing price data
+2026-06-15 20:48:11 | INFO     | __main__ | Prepared normalized data for ETH
+2026-06-15 20:48:11 | INFO     | __main__ | Loading data from data/Binance_SOLUSDT_d.csv
+2026-06-15 20:48:11 | INFO     | __main__ | Normalizing price data
+2026-06-15 20:48:11 | INFO     | __main__ | Prepared normalized data for SOL
+2026-06-15 20:48:11 | INFO     | __main__ | Loading data from data/Binance_TRXUSDT_d.csv
+2026-06-15 20:48:11 | INFO     | __main__ | Normalizing price data
+2026-06-15 20:48:11 | INFO     | __main__ | Prepared normalized data for TRX
+2026-06-15 20:48:11 | INFO     | __main__ | Loading data from data/Binance_XRPUSDT_d.csv
+2026-06-15 20:48:11 | INFO     | __main__ | Normalizing price data
+2026-06-15 20:48:11 | INFO     | __main__ | Prepared normalized data for XRP
+2026-06-15 20:48:11 | INFO     | __main__ | Stationarity test results:
+    Coin  Test Statistics   P-Value  Used Lags
+0    ADA        -2.250299  0.188499         22
+1    BCH        -2.532250  0.107823         25
+2    BNB        -1.453643  0.556306         26
+3    BTC        -0.888838  0.791626          1
+4   DOGE        -3.018056  0.033242         26
+5    ETH        -1.955542  0.306400          6
+6    SOL        -1.565070  0.501112          0
+7    TRX        -1.886653  0.338366         16
+8    XRP        -1.764552  0.398197         17
+2026-06-15 20:48:11 | INFO     | __main__ | Latest Unix time entry = 1597104000000
+2026-06-15 20:48:11 | INFO     | __main__ | Loading data from data/Binance_BTCUSDT_d.csv
+2026-06-15 20:48:12 | INFO     | __main__ | Trend plot saved to output/Trends.png
+2026-06-15 20:48:12 | INFO     | __main__ | Correlation matrix computed.
+2026-06-15 20:48:12 | INFO     | __main__ | Correlation heatmap saved to output/CorrMatrix.png
+2026-06-15 20:48:12 | INFO     | __main__ | Preliminary DAG constructed with 8 edges.
+2026-06-15 20:48:12 | INFO     | __main__ | DAG plot saved to output/ACG.png
+2026-06-15 20:48:12 | INFO     | __main__ | Bayesian Network fitted.
+2026-06-15 20:48:12 | INFO     | __main__ | Node probabilities extracted.
+2026-06-15 20:48:12 | INFO     | __main__ | Final DAG plot saved to output/ACG_final.png
+2026-06-15 20:48:12 | INFO     | __main__ | Latest Unix time entry = 1597104000000
+2026-06-15 20:48:12 | INFO     | __main__ | Latest Unix time entry = 1597104000000
+2026-06-15 20:48:12 | INFO     | __main__ | Volatility of BTC: 0.030474
+2026-06-15 20:48:12 | INFO     | __main__ | Volatility of SOL: 0.061945
+2026-06-15 20:48:12 | INFO     | __main__ | RSI calculated for BTC (window = 14).
+2026-06-15 20:48:12 | INFO     | __main__ | RSI calculated for SOL (window = 14).
+2026-06-15 20:48:12 | INFO     | __main__ | 30-day SMA calculated for BTC.
+2026-06-15 20:48:12 | INFO     | __main__ | 30-day SMA calculated for SOL.
+2026-06-15 20:48:12 | INFO     | __main__ | Momentum strategy produced 983 samples.
+2026-06-15 20:48:12 | INFO     | __main__ | Propensity scores computed.
+2026-06-15 20:48:12 | INFO     | __main__ | Nearest‑neighbour matching completed.
+2026-06-15 20:48:12 | INFO     | __main__ | ATE Return: 0.2811 (+/- 39.7815) [CI -90.6500, 88.6200]
+2026-06-15 20:48:12 | INFO     | __main__ | ATE Trend: -0.1117 (+/- 18.1479) [CI -43.4982, 37.8697]
+2026-06-15 20:48:12 | INFO     | __main__ | Balance histograms saved to output/Histogram.png
+2026-06-15 20:48:12 | INFO     | __main__ | Pipeline completed successfully. 
 ```
 
 ---
@@ -65,15 +120,15 @@ Sample Propensity Scores:
 * *ADF* | For each coin, prints the ADF test statistics to gauge stationarity.
 * *Visualizations* | Sub-stacked daily closing trend of all nine coins, Heat map of Pearson correlations, and a hand-craft causal graph (BTC → SOL, BTC → TRX, ...)
 
-![plot](Trends.png)
+![plot](output/Trends.png)
 
-![plot](CorrMatrix.png)
+![plot](output/CorrMatrix.png)
 
-![plot](ACG.png)
+![plot](output/ACG.png)
 
 * *Bayesian Network* | Uses `pomegranate` to specify directed acyclic graph of seven coins with conditional probability tables derived from the Pearson correlations.
 
-![plot](ACG_final.png)
+![plot](output/ACG_final.png)
 
 * *Momentum strategy* | Generate a binary "treatment" if Solana's trend matches Bitcoin's trend over a 30-day SMA.
 * *Propensity Score* | *Logistic Regression* on standardized features to compute `Propensity Score`.
@@ -81,7 +136,7 @@ Sample Propensity Scores:
 * *ATE Calculation* | Substract matched pair Return & Trend to quantify effect sizes. 
 Histogram of the return and trend balance of the matched dataset
 
-![plot](Histogram.png)
+![plot](output/Histogram.png)
 
 > **Why a Bayesian network for altcoins?**  
 > The network encodes assumed causal drivers (BTC→TRX, BTC→BNB, etc.). After training, it outputs the probability that a “down” move in BTC leads to a “down” in each alt‑coin. 
@@ -94,15 +149,20 @@ In the current setting the result is roughly 80 % for BNB, TRX, SOL and XRP, w
 ### Prerequisites
 
 * python 3.12.11
-* numpy 1.18
-* pandas 1.2
-* matplotlib 3.5
-* seaborn 0.11
-* networkx 2.6
-* statmodels 0.12
-* pomegranate 0.14
-* scikit-learn 0.24
+* numpy 2.3.5
+* pandas 3.0.2
+* matplotlib 3.10.8
+* seaborn 0.13.2
+* networkx 3.6
+* statmodels 0.14.6
+* pomegranate 1.1.2
+* scikit-learn 1.6.1
 * torch | optional for BN conversion
+* argparse
+* logging
+* pathlib
+* random
+* sys
 * pip (Python package manager)
  
 ### Clone the repo:
@@ -124,22 +184,22 @@ python -m pip install -r requirements.txt
 
 ### Usage
 ```
+python CausCrypto.py -h
+```
+Or use --help to overview all functionalities.
+Starting pipeline:
+```
 python CausCrypto.py
-```    
+```
 
 ## File Structure
 
-├── CausCrypto.py **Main Python application**<br/>
-├── Trends.png **Graphic for Moving Averages**<br/>
-├── CorrMatrix.png **Graphic for the Heatmap**<br/>
-├── Heatmap.png **Graphic for Heatmap**<br/>
-├── ACG.png **Graphic for the Causal Graph**<br/>
-├── ACG_final.png **Graphic for the final DAG**<br/>
-├── Histogram.png **Graphic for Balance**<br/>
-├── Binance_...USDT_d.csv **Data CSV Files**<br/>
-├── requirements.txt **Python dependencies**<br/>
+├── data **Data source folder**<br/>
+├── LICENSE **Unlicense**<br/>
+├── output **Folder for created graphics**<br/>
 ├── README.md **This file**<br/>
-└── LICENSE **Unlicense**
+├── requirements.txt **Python dependencies**<br/>
+└── CausCrypto.py **Main Python application**<br/>
 
 ## License
 
