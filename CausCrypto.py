@@ -695,7 +695,7 @@ def main() -> None:
     # -------------------------------------- #
     
     dag = build_preliminary_dag(corr_matrix, threshold = args.correlation_threshold)
-    plot_dag(dag, args.output_dir / "ACG.png")
+    plot_dag(dag, args.output_dir / "DAG.png")
 
     # ------------------------------------------------ #
     # 4. Binary state preparation for Bayesian Network #
@@ -711,7 +711,7 @@ def main() -> None:
 
     # Extract probabilities for final plot
     node_probs = extract_node_probabilities(bn, binary_frames)
-    plot_final_dag(node_probs, args.output_dir / "ACG_final.png")
+    plot_final_dag(node_probs, args.output_dir / "DAG_final.png")
 
     # --------------------------------------------------------------------------------------- #
     # Based on the analysis, the price trajectories of most cryptocurrencies closely track    #

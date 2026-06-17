@@ -90,10 +90,10 @@ The script prints a quick report to the console:
 2026-06-15 20:48:12 | INFO     | __main__ | Correlation matrix computed.
 2026-06-15 20:48:12 | INFO     | __main__ | Correlation heatmap saved to output/CorrMatrix.png
 2026-06-15 20:48:12 | INFO     | __main__ | Preliminary DAG constructed with 8 edges.
-2026-06-15 20:48:12 | INFO     | __main__ | DAG plot saved to output/ACG.png
+2026-06-15 20:48:12 | INFO     | __main__ | DAG plot saved to output/DAG.png
 2026-06-15 20:48:12 | INFO     | __main__ | Bayesian Network fitted.
 2026-06-15 20:48:12 | INFO     | __main__ | Node probabilities extracted.
-2026-06-15 20:48:12 | INFO     | __main__ | Final DAG plot saved to output/ACG_final.png
+2026-06-15 20:48:12 | INFO     | __main__ | Final DAG plot saved to output/DAG_final.png
 2026-06-15 20:48:12 | INFO     | __main__ | Latest Unix time entry = 1597104000000
 2026-06-15 20:48:12 | INFO     | __main__ | Latest Unix time entry = 1597104000000
 2026-06-15 20:48:12 | INFO     | __main__ | Volatility of BTC: 0.030474
@@ -124,11 +124,11 @@ The script prints a quick report to the console:
 
 ![plot](output/CorrMatrix.png)
 
-![plot](output/ACG.png)
+![plot](output/DAG.png)
 
 * *Bayesian Network* | Uses `pomegranate` to specify directed acyclic graph of seven coins with conditional probability tables derived from the Pearson correlations.
 
-![plot](output/ACG_final.png)
+![plot](output/DAG_final.png)
 
 * *Momentum strategy* | Generate a binary "treatment" if Solana's trend matches Bitcoin's trend over a 30-day SMA.
 * *Propensity Score* | *Logistic Regression* on standardized features to compute `Propensity Score`.
